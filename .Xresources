@@ -1,0 +1,159 @@
+! xterm*font: *-fixed-*-*-*-14-*
+XTerm*termName: xterm-256color
+XTerm*loginShell: true
+XTerm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
+!! XTerm*faceName: Ubuntu Mono
+XTerm*faceName: Latin Modern
+!! Try this:
+XTerm*renderFont: true
+XTerm*faceSize: 11
+XTerm*foreground: #EBEBEB
+XTerm*background: #002B36
+! urxvt.color0: #073642
+! Xterm*color0: #073642
+! Xterm*color15: #073642
+
+#define S_base03        #002b36
+#define S_base02        #073642
+#define S_base01        #586e75
+#define S_base00        #657b83
+#define S_base0         #839496
+#define S_base1         #93a1a1
+#define S_base2         #eee8d5
+#define S_base3         #fdf6e3
+
+! XTerm*background:            S_base03
+! XTerm*foreground:            S_base0
+Xterm*fadeColor:             S_base03
+Xterm*cursorColor:           S_base1
+Xterm*pointerColorBackground:S_base01
+Xterm*pointerColorForeground:S_base1
+
+#define S_yellow        #b58900
+#define S_orange        #cb4b16
+#define S_red           #dc322f
+#define S_magenta       #d33682
+#define S_violet        #6c71c4
+#define S_blue          #268bd2
+#define S_cyan          #2aa198
+#define S_green         #859900
+
+!! black dark/light
+Xterm*color0:                S_base02
+Xterm*color8:                S_base03
+
+!! red dark/light
+Xterm*color1:                S_red
+Xterm*color9:                S_orange
+
+!! green dark/light
+Xterm*color2:                S_green
+Xterm*color10:               S_base01
+
+!! yellow dark/light
+Xterm*color3:                S_yellow
+Xterm*color11:               S_base00
+
+!! blue dark/light
+Xterm*color4:                S_blue
+Xterm*color12:               S_base0
+
+!! magenta dark/light
+Xterm*color5:                S_magenta
+Xterm*color13:               S_violet
+
+!! cyan dark/light
+Xterm*color6:                S_cyan
+Xterm*color14:               S_base1
+
+!! white dark/light
+Xterm*color7:                S_base2
+Xterm*color15:               S_base3
+
+!! Copy paste:
+XTerm*vt100.translations: #override \
+    Shift Ctrl <Key> C: copy-selection(CLIPBOARD) \n\
+    Shift Ctrl <Key> V: insert-selection(CLIPBOARD)
+
+!! Add Alt as metakey
+!! xterm*metaSendsEscape: true
+
+!! Allow for Control+enter and Shift-enter (to use in vim) (Not working idk why)
+!! URxvt.keysym.S-Return:     \033[13;2u
+!! URxvt.keysym.C-Return:     \033[13;5u
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! xterm*font: *-fixed-*-*-*-14-*
+UXTerm*termName: xterm-256color
+UXTerm*loginShell: true
+UXTerm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
+!! UXTerm*faceName: Ubuntu Mono
+UXterm*faceName: Ubuntu Mono
+UXTerm*faceSize: 12
+UXTerm*foreground: #EBEBEB
+UXTerm*background: #002B36
+! urxvt.color0: #073642
+! UXterm*color0: #073642
+! UXterm*color15: #073642
+
+#define S_base03        #002b36
+#define S_base02        #073642
+#define S_base01        #586e75
+#define S_base00        #657b83
+#define S_base0         #839496
+#define S_base1         #93a1a1
+#define S_base2         #eee8d5
+#define S_base3         #fdf6e3
+
+! UXTerm*background:            S_base03
+! UXTerm*foreground:            S_base0
+UXterm*fadeColor:             S_base03
+UXterm*cursorColor:           S_base1
+UXterm*pointerColorBackground:S_base01
+UXterm*pointerColorForeground:S_base1
+
+#define S_yellow        #b58900
+#define S_orange        #cb4b16
+#define S_red           #dc322f
+#define S_magenta       #d33682
+#define S_violet        #6c71c4
+#define S_blue          #268bd2
+#define S_cyan          #2aa198
+#define S_green         #859900
+
+!! black dark/light
+UXterm*color0:                S_base02
+UXterm*color8:                S_base03
+
+!! red dark/light
+UXterm*color1:                S_red
+UXterm*color9:                S_orange
+
+!! green dark/light
+UXterm*color2:                S_green
+UXterm*color10:               S_base01
+
+!! yellow dark/light
+UXterm*color3:                S_yellow
+UXterm*color11:               S_base00
+
+!! blue dark/light
+UXterm*color4:                S_blue
+UXterm*color12:               S_base0
+
+!! magenta dark/light
+UXterm*color5:                S_magenta
+UXterm*color13:               S_violet
+
+!! cyan dark/light
+UXterm*color6:                S_cyan
+UXterm*color14:               S_base1
+
+!! white dark/light
+UXterm*color7:                S_base2
+UXterm*color15:               S_base3
+
+!! Copy paste:
+UXTerm*vt100.translations: #override \
+    Shift Ctrl <Key> C: copy-selection(CLIPBOARD) \n\
+    Shift Ctrl <Key> V: insert-selection(CLIPBOARD)
