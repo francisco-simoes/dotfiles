@@ -1,0 +1,9 @@
+map <A-j> zoom out
+map <A-k> zoom in
+map u scroll half-up
+map d scroll half-down
+map D toggle_page_mode
+map N recolor
+map n navigate next
+map p navigate previous
+
