@@ -1,0 +1,7 @@
+/home/simoes/.Xresources
+/home/simoes/.scripts/rclone_backup.sh
+/home/simoes/.scripts/rsync_dotfiles.sh
+/home/simoes/Documents/rsync_dotfiles_ubuntu.txt
+/home/simoes/Documents/rsync_dotfiles_general.txt
+/home/simoes/Documents/my-crontab
+
