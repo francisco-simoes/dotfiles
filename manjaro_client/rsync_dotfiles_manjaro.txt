@@ -1,5 +1,6 @@
 /home/simoes/.Xresources
 /home/simoes/.scripts/rsync_dotfiles.sh
+/home/simoes/.scripts/rsync_dotfiles_and_git_push.sh
 /home/simoes/Documents/rsync_dotfiles_manjaro.txt
 /home/simoes/Documents/rsync_dotfiles_zsh.txt
 /home/simoes/Documents/rsync_dotfiles_ranger.txt
