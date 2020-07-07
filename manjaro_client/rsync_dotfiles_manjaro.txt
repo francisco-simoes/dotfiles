@@ -1,0 +1,9 @@
+/home/simoes/.Xresources
+/home/simoes/.scripts/rsync_dotfiles.sh
+/home/simoes/Documents/rsync_dotfiles_manjaro.txt
+/home/simoes/Documents/rsync_dotfiles_zsh.txt
+/home/simoes/Documents/rsync_dotfiles_ranger.txt
+/home/simoes/Documents/rsync_dotfiles_general.txt
+/home/simoes/Documents/my-crontab
+/home/simoes/.config/awesome/rc.lua
+/home/simoes/.config/awesome/themes/default/theme.lua

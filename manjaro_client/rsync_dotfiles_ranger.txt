@@ -1,0 +1,3 @@
+/home/simoes/.config/ranger/rc.conf
+/home/simoes/.config/ranger/rifle.conf
+/home/simoes/.config/ranger/scope.sh
