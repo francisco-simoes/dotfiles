@@ -74,3 +74,4 @@ pacman -S bluez-utils #Installs bluetoothctl and others.
 yay -S zoom
 pacman -S w3m #To view images in ranger.
 yay -S bfg #To delete files across entire git history.
+yay -S rstudio-desktop-bin
