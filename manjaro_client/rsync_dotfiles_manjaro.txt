@@ -8,4 +8,5 @@
 /home/simoes/Documents/my-crontab
 /home/simoes/.config/awesome/rc.lua
 /home/simoes/.config/awesome/themes/default/theme.lua
+/home/simoes/.config/awesome/themes/default/manjaro64_neon.png
 /home/simoes/Documents/manjaro_install_commands.sh

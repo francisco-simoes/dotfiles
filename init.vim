@@ -34,10 +34,10 @@ badd /home/simoes/Desktop/Cloud/UUtrecht/Thesis/References/library.bib
 
 filetype plugin indent on
 " move within a wrapped line
-nnoremap j gj
-vnoremap j gj
-nnoremap k gk
-vnoremap k gk
+"nnoremap j gj
+"vnoremap j gj
+"nnoremap k gk
+"vnoremap k gk
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Splitting
@@ -109,6 +109,8 @@ vnoremap <silent> -# :s/^#//<cr>:noh<cr>
 " This makes Y copy until end of line:
 nmap Y y$
 
+" ALE used LSP from COC:
+let g:ale_disable_lsp = 1
 """"""""""""""""""""""""""""""""""""
 " Plugin manager vim-plug:
 
@@ -134,11 +136,12 @@ Plug 'vimwiki/vimwiki'
 Plug 'vim-scripts/bash-support.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
 " ######### Python plugins ##############################
 Plug 'jeetsukumaran/vim-pythonsense' " Python motions
 "Plug 'Vimjas/vim-python-pep8-indent' Python indentation.
 "Plug 'https://github.com/tmhedberg/SimpylFold.git' Python indentation-based folding:
-"Plug 'dense-analysis/ale' " Linting (syntax error finder) 
+Plug 'dense-analysis/ale' " Linting (syntax error finder) 
 "Plug 'davidhalter/jedi-vim' Completion with jedi.
 " Ipython connection:
 Plug 'jpalardy/vim-slime', { 'for': 'python' }
@@ -180,12 +183,15 @@ nnoremap <C-t> :NERDTree<CR>
 
 "python.jediEnabled": false
 """"""""""""""""""""""""""""""""""""
-"" Specify linters to use with the ALE plugin
-"let g:ale_linters = {
-"      \   'python': ['flake8', 'pylint'],
-"      \   'ruby': ['standardrb', 'rubocop'],
-"      \   'javascript': ['eslint'],
-"      \}
+
+"" Specify linters and fixers to use with the ALE plugin
+let g:ale_linters = {'python': ['flake8']} " flake8, pydocstyle, bandit, mypy, pylint.
+let g:ale_linters_explicit = 1 " No other linters will be used.
+let g:ale_fixers = {'*': [], 'python': ['autopep8']} " autopep8, yapf.
+
+"" 
+let g:ale_lint_on_text_changed = 1
+
 """"""""""""""""""""""""""""""""""""
 " slime plugin config with neovim directly
 let g:slime_target = "neovim"
@@ -236,6 +242,11 @@ nnoremap <Leader>d :SlimeSend1 %debug<CR>
 " map <Leader>q to exit debug mode or IPython
 " nnoremap <Leader>q :SlimeSend1 exit<CR>
 
+" -------------------------------------------
+" Better completion:
+" -------------------------------------------
+set complete=.,w,b,u,t,i,kspell
+"
 " -------------------------------------------
 " Set foldmethod:
 " -------------------------------------------

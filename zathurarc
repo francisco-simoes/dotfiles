@@ -6,4 +6,5 @@ map D toggle_page_mode
 map <A-n> recolor
 map n navigate next
 map p navigate previous
+set selection-clipboard clipboard
 

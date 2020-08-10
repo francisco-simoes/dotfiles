@@ -75,3 +75,12 @@ yay -S zoom
 pacman -S w3m #To view images in ranger.
 yay -S bfg #To delete files across entire git history.
 yay -S rstudio-desktop-bin
+pacman -S ipython
+pacman -S numpy
+pacman -S sshfs #To mount remote ssh file systems.
+pacman -S chromium
+yay -S jekyll #To create/maintain my website.
+pacman -S hub #To interact with Github.
+
+# Orbisk stuff:
+pacman -S pgadmin4
