@@ -1,5 +1,5 @@
 ! xterm*font: *-fixed-*-*-*-14-*
-*.alpha: 0.95
+*.alpha: 0.90
 
 ! Dracula Xresources palette
 !*.foreground: #F8F8F2
@@ -21,26 +21,66 @@
 !*.color7:     #BFBFBF
 !*.color15:    #E6E6E6
 
-! Molokai theme
-*background: #101010
+! Strong colors (my theme)
+*background: #000000
 *foreground: #d0d0d0
 *cursorColor: #d0d0d0
-*color0: #101010
-*color1: #960050
-*color2: #66aa11
-*color3: #c47f2c
-*color4: #30309b
-*color5: #7e40a5
-*color6: #3579a8
-*color7: #9999aa
-*color8: #303030
-*color9: #ff0090
-*color10: #80ff00
-*color11: #ffba68
-*color12: #5f5fee
-*color13: #bb88dd
-*color14: #4eb4fa
-*color15: #d0d0d0
+!black:
+*color0: #000000 
+!red:
+*color1: #FF0000
+!gold:
+!*color2: #FFD700
+*color2: #008000
+!green:
+!*color3: #008000
+*color3: #FFD700
+!blue:
+*color4: #0000FF
+!violet:
+*color5: #EE82EE
+!cyan:
+*color6: #00FFFF
+!white:
+*color7: #FFFFFF
+!bright colors:
+!gray:
+*color8: #808080
+!crimson (light red):
+*color9: #DC143C
+!yellow:
+*color10: #FFFF00
+!lime:
+*color11: #00FF00
+!Aqua
+*color12: #00FFFF
+!magenta
+*color13: #FF00FF
+!lightcyan
+*color14: #E0FFFF
+!white
+*color15: #FFFFFF
+
+! Molokai theme
+!*background: #101010
+!*foreground: #d0d0d0
+!*cursorColor: #d0d0d0
+!*color0: #101010
+!*color1: #960050
+!*color2: #66aa11
+!*color3: #c47f2c
+!*color4: #30309b
+!*color5: #7e40a5
+!*color6: #3579a8
+!*color7: #9999aa
+!*color8: #303030
+!*color9: #ff0090
+!*color10: #80ff00
+!*color11: #ffba68
+!*color12: #5f5fee
+!*color13: #bb88dd
+!*color14: #4eb4fa
+!*color15: #d0d0d0
 
 ! Atom One Light theme
 !*background: #f9f9f9

@@ -33,12 +33,23 @@ cp ~/Documents/dotfiles/manjaro_client/theme.lua ~/.config/awesome/themes/defaul
 ## Neovim
 mkdir ~/.config/nvim
 cp ~/Documents/dotfiles/init.vim ~/.config/nvim/init.vim
-pacman -S xclip #Needed to be able to copy to system's clipboard.
 #Install vim-plug:
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 #Install nodejs and npm for coc-vim and coc-python:
 pacman -S nodejs npm #If this fails, do `curl -sL install-node.now.sh/lts | bash` as suggested on github.
 lxterminal --command 'nvim "+CocInstall coc-python"' #Installs coc-python. Assumes you have lxtermial.
+#Install linters and fixers to use with the ALE plugin:
+pacman -S flake8
+pacman -S python-black
+pacman -S mypy
+#Prerequisites for Ipython-cell plugin:
+pacman -S xclip #Needed to be able to copy to system's clipboard.
+pacman -S python-pynvim #python plugin host.
+pacman -S tk #installs tkinter.
+#Prerequisites for vimtex:
+pacman -S texlive-core #To get latexmk to compile.
+pacman -S texlive-latexextra #Get some useful packages for thms etc.
+yay -S neovim-remote
 
 ## Ranger
 mkdir ~/.config/ranger
@@ -81,6 +92,9 @@ pacman -S sshfs #To mount remote ssh file systems.
 pacman -S chromium
 yay -S jekyll #To create/maintain my website.
 pacman -S hub #To interact with Github.
+pacman -S inkscape
+pacman -S python-scikit-learn
+pacman -S python-matplotlib
 
 # Orbisk stuff:
 pacman -S pgadmin4

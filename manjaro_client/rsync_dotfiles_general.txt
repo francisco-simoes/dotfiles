@@ -1,3 +1,5 @@
 /home/simoes/.config/nvim/init.vim
 /home/simoes/.config/nvim/coc-settings.json
 /home/simoes/.config/zathura/zathurarc
+/home/simoes/.latexmkrc
+/home/simoes/pyproject.toml

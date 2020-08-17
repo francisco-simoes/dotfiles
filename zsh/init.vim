@@ -5,15 +5,28 @@ set mouse=a
 set number
 syntax on
 """""""""""""""""
-set scrolloff=3 " Keep 3 lines below and above the cursor
+set scrolloff=2 " Keep 3 lines below and above the cursor
 """"""""""""""""""""""""""""""""""""
 " Set SuperTab completion to use omni-func completion:
-let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+"let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+let g:SuperTabDefaultCompletionType = "context"
 
 """"""""""""""""""""""""""""""""""""
 " Set tex files as latex type:
 let g:tex_flavor = "latex"
 
+"For latex compiler to work with vimtex:
+let g:vimtex_compiler_progname = 'nvr' " use neovim-remote
+
+let g:Tex_IgnoredWarnings = 
+    \'Underfull'."\n".
+    \'Overfull'."\n".
+    \'Double space found.'
+let g:Tex_IgnoreLevel = 8
+" Omnicompletion:
+inoremap <C-o> <C-X><C-O>
+
+"nnoremap <Leader>ll <Plug>VimtexCompile
 """"""""""""""""""""""""""""""""""""
 " Completions
 " Enable omnifunc completions:
@@ -38,27 +51,6 @@ filetype plugin indent on
 "vnoremap j gj
 "nnoremap k gk
 "vnoremap k gk
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Splitting
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set splitbelow splitright
-
-"Remap splits navigation to Ctrl hjkl
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
-
-"Friendly size adjustment
-noremap <C-Left> :vertical resize +3<CR>
-noremap <C-Right> :vertical resize -3<CR>
-noremap <C-Up> :resize +3<CR>
-noremap <C-Down> :resize -3<CR>
-
-"Window to horizontal or vertical
-noremap <C-w>tv <C-w>t<C-W>H
-noremap <C-w>th <C-w>t<C-W>K
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Terminal emulator stuff
@@ -122,8 +114,9 @@ Plug 'https://github.com/kien/rainbow_parentheses.vim.git' " Raimbow Parenthesis
 Plug 'https://github.com/ervandew/supertab.git' " SuperTab 
 Plug 'https://github.com/itchyny/lightline.vim.git' " Lightline (Better design of Mode display)
 Plug 'https://github.com/terryma/vim-multiple-cursors.git' " Multiple Cursors
-Plug 'https://github.com/vim-scripts/restore_view.vim.git' " Restore View (Remembers folding and cursor position between sessions)
+"Plug 'https://github.com/vim-scripts/restore_view.vim.git' " Restore View (Remembers folding and cursor position between sessions)
 Plug 'https://github.com/lervag/vimtex.git' " Vim tex
+"Plug 'https://github.com/vim-latex/vim-latex' " Latex suite - for <F5> environment creator!
 Plug 'calviken/vim-gdscript3' " Godot script syntax
 "Plug 'https://github.com/chrisbra/unicode.vim.git' Unicode plugin (It's not working...)
 "Plug 'https://github.com/joom/latex-unicoder.vim.git' Latex unicoder - Interferes with my split navigation because of <C-l>
@@ -185,12 +178,17 @@ nnoremap <C-t> :NERDTree<CR>
 """"""""""""""""""""""""""""""""""""
 
 "" Specify linters and fixers to use with the ALE plugin
-let g:ale_linters = {'python': ['flake8']} " flake8, pydocstyle, bandit, mypy, pylint.
+let g:ale_linters = {'python': ['flake8', 'mypy'], 'tex': ['lacheck']} 
 let g:ale_linters_explicit = 1 " No other linters will be used.
-let g:ale_fixers = {'*': [], 'python': ['autopep8']} " autopep8, yapf.
+let g:ale_fixers = {'python': ['black']} 
 
-"" 
+" Navigate between errors:
+nnoremap ]e :ALENextWrap<CR>
+nnoremap [e :ALEPreviousWrap<CR>
+
+" Other ALE configs 
 let g:ale_lint_on_text_changed = 1
+let g:ale_echo_msg_format = '[%severity%] %s [%linter%]'
 
 """"""""""""""""""""""""""""""""""""
 " slime plugin config with neovim directly
@@ -217,7 +215,7 @@ nnoremap <Leader>c :IPythonCellExecuteCell<CR>
 nnoremap <Leader>C :IPythonCellExecuteCellJump<CR>
 
 " map <Leader>l to clear IPython screen
-nnoremap <Leader>l :IPythonCellClear<CR>
+"nnoremap <Leader>l :IPythonCellClear<CR>
 
 " map <Leader>x to close all Matplotlib figure windows
 nnoremap <Leader>x :IPythonCellClose<CR>
@@ -242,10 +240,52 @@ nnoremap <Leader>d :SlimeSend1 %debug<CR>
 " map <Leader>q to exit debug mode or IPython
 " nnoremap <Leader>q :SlimeSend1 exit<CR>
 
+"""""""""
+" Function to permanently delete views created by 'mkview'
+function! MyDeleteView()
+    let path = fnamemodify(bufname('%'),':p')
+    " vim's odd =~ escaping for /
+    let path = substitute(path, '=', '==', 'g')
+    if empty($HOME)
+    else
+        let path = substitute(path, '^'.$HOME, '\~', '')
+    endif
+    let path = substitute(path, '/', '=+', 'g') . '='
+    " view directory
+    let path = &viewdir.'/'.path
+    call delete(path)
+    echo "Deleted: ".path
+endfunction
+
+" Command Delview (and it's abbreviation 'delview')
+command Delview call MyDeleteView()
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Splitting
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set splitbelow splitright
+
+"Remap splits navigation to Ctrl hjkl
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+
+"Friendly size adjustment
+noremap <C-Left> :vertical resize +3<CR>
+noremap <C-Right> :vertical resize -3<CR>
+noremap <C-Up> :resize +3<CR>
+noremap <C-Down> :resize -3<CR>
+
+"Window to horizontal or vertical
+noremap <C-w>tv <C-w>t<C-W>H
+noremap <C-w>th <C-w>t<C-W>K
+
 " -------------------------------------------
 " Better completion:
 " -------------------------------------------
-set complete=.,w,b,u,t,i,kspell
+"set complete=.,w,b,u,t,i,kspell
+set complete=.,w,b,u,t
 "
 " -------------------------------------------
 " Set foldmethod:
