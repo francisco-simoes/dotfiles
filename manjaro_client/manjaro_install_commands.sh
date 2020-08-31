@@ -87,14 +87,21 @@ pacman -S w3m #To view images in ranger.
 yay -S bfg #To delete files across entire git history.
 yay -S rstudio-desktop-bin
 pacman -S ipython
-pacman -S numpy
+pacman -S python-numpy
+pacman -S python-pandas
+pacman -S python-scikit-learn
+pacman -S python-matplotlib
 pacman -S sshfs #To mount remote ssh file systems.
 pacman -S chromium
 yay -S jekyll #To create/maintain my website.
 pacman -S hub #To interact with Github.
 pacman -S inkscape
-pacman -S python-scikit-learn
-pacman -S python-matplotlib
+pacman -S google-calendar-nativefier
+yay -S translate-shell-git #Google translate in terminal.
+yay -S nodejs-markdown-pdf
+yay -S when-changed-git #Execute commands when a file changes!
 
 # Orbisk stuff:
 pacman -S pgadmin4
+yay -S slack-desktop
+pacman -S keepass
