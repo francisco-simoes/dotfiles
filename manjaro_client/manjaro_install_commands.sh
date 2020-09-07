@@ -105,3 +105,7 @@ yay -S when-changed-git #Execute commands when a file changes!
 pacman -S pgadmin4
 yay -S slack-desktop
 pacman -S keepass
+yay -S python-gspread-git #Google sheets API
+pacman -S python-google-api-core
+pacman -S python-google-auth-oauthlib
+pacman -S python-oauth2client
