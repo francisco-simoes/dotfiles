@@ -317,5 +317,10 @@ colorscheme pop-punk
 """"""""""""""""""""""""""""""""""""
 " Highlight line with dark blue
 set cursorline
-" Python indentation-based folding:
 hi CursorLine   cterm=NONE ctermbg=18 ctermfg=NONE
+
+" Python indentation-based folding:
+set foldmethod=indent
+
+" Better fold colors
+hi Folded ctermbg=black ctermfg=gray

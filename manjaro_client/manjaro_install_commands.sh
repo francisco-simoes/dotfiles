@@ -1,3 +1,9 @@
+# THINGS TO FIX/CONSIDER BEFORE USING THIS:
+# 	- RUNNING THIS WITH SUDO WILL RUN YAY WITH SUDO! (VERY BAD!)
+#		SO MAYBE ADD SUDO EVERYWHERE IT'S NEEDED.
+# 	- INSTALL PYTHON PACKAGES WITH PYPENV AS BART SAID!!
+#		(INSTEAD OF USING THE PACKAGE MANAGERS)
+
 #### This includes the commands to personalize Manjaro Awesome edition to my liking.
 
 # First things first
@@ -101,6 +107,12 @@ yay -S translate-shell-git #Google translate in terminal.
 yay -S nodejs-markdown-pdf
 yay -S when-changed-git #Execute commands when a file changes!
 
+## Wine stuff
+#pacman -S wine
+#pacman -S winetricks
+#pacman -S wine-mono
+#pacman -S zenity
+
 # Orbisk stuff:
 pacman -S pgadmin4
 yay -S slack-desktop
@@ -109,3 +121,6 @@ yay -S python-gspread-git #Google sheets API
 pacman -S python-google-api-core
 pacman -S python-google-auth-oauthlib
 pacman -S python-oauth2client
+pacman -S python-google-cloud-storage #To use Ivo's artifact bucket automatizer.
+#(Import using the name `google.cloud).
+yay -S pgcli
