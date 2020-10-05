@@ -106,6 +106,7 @@ pacman -S google-calendar-nativefier
 yay -S translate-shell-git #Google translate in terminal.
 yay -S nodejs-markdown-pdf
 yay -S when-changed-git #Execute commands when a file changes!
+pacman -S tree
 
 ## Wine stuff
 #pacman -S wine
@@ -124,3 +125,10 @@ pacman -S python-oauth2client
 pacman -S python-google-cloud-storage #To use Ivo's artifact bucket automatizer.
 #(Import using the name `google.cloud).
 yay -S pgcli
+
+# Pypi and pip stuff (see https://packaging.python.org/tutorials/packaging-projects/)
+python3 -m pip install --user --upgrade setuptools wheel
+python3 -m pip install --user --upgrade twine
+pacman -S python-virtualenv
+mkdir ~/Environments
+virtualenv --system-site-packages ~/Environments/orbisk
