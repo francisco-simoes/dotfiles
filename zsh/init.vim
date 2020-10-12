@@ -140,7 +140,7 @@ Plug 'dense-analysis/ale' " Linting (syntax error finder)
 Plug 'jpalardy/vim-slime', { 'for': 'python' }
 Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "To use with Python must do :CocInstall coc-python.
-Plug 'vim-pandoc/vim-pandoc' "Pandoc is for markdown stuff: :Pandoc creates html file.
+"Plug 'vim-pandoc/vim-pandoc' "Pandoc is for markdown stuff: :Pandoc creates html file.
 Plug 'vim-pandoc/vim-pandoc-syntax'
 
 call plug#end()
