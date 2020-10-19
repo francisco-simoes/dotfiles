@@ -107,6 +107,8 @@ yay -S translate-shell-git #Google translate in terminal.
 yay -S nodejs-markdown-pdf
 yay -S when-changed-git #Execute commands when a file changes!
 pacman -S tree
+yay -S mmv
+yay -S mathpix-snipping-tool
 
 ## Wine stuff
 #pacman -S wine
