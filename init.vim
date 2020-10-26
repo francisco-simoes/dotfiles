@@ -324,3 +324,6 @@ set foldmethod=indent
 
 " Better fold colors
 hi Folded ctermbg=black ctermfg=gray
+
+" Same background (may be transparent) as terminal:
+hi Normal guibg=NONE ctermbg=NONE
