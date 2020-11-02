@@ -137,3 +137,19 @@ mkdir ~/Environments
 virtualenv --system-site-packages ~/Environments/orbisk
 pacman -S python-pipenv
 pacman -S python-virtualenvwrapper
+
+# Note:
+# Get guix package manager by running the script from
+# https://git.savannah.gnu.org/cgit/guix.git/plain/etc/guix-install.sh
+
+# Doom Emacs stuff
+#prereqs
+pacman -S emacs
+pacman -S fd
+pacman -S ripgrep
+#for email
+pacman -S isync
+pacman -S offlineimap
+yay -S mu
+#for vterm
+pacman -S cmake
