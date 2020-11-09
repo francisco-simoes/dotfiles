@@ -109,6 +109,9 @@ yay -S when-changed-git #Execute commands when a file changes!
 pacman -S tree
 yay -S mmv
 yay -S mathpix-snipping-tool
+pacman -S graphviz #To use with pydeps to graph python dependencies.
+pacman -S pandoc
+
 
 ## Wine stuff
 #pacman -S wine
@@ -153,3 +156,6 @@ pacman -S offlineimap
 yay -S mu
 #for vterm
 pacman -S cmake
+#for python
+pacman -S pyenv
+pacman -S yapf
