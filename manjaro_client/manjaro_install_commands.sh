@@ -159,3 +159,10 @@ pacman -S cmake
 #for python
 pacman -S pyenv
 pacman -S yapf
+#for email
+sudo pacman -S isync  # mbsync
+yay -S mu
+#for orgmode latex previews
+pacman -S texlive-core texlive-bin texlive-science
+pacman -S gnuplot
+
